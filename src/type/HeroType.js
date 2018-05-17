@@ -1,6 +1,6 @@
 // @flow
 
-import { GraphQLObjectType, GraphQLString } from 'graphql'
+import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 import { globalIdField } from 'graphql-relay'
 import { NodeInterface } from '../interface/NodeInterface'
 
@@ -24,6 +24,18 @@ export default new GraphQLObjectType({
     image: {
       type: GraphQLString,
       resolve: hero => hero.image
+    },
+    comics: {
+      type: GraphQLInt,
+      resolve: hero => hero.comics
+    },
+    series: {
+      type: GraphQLInt,
+      resolve: hero => hero.series
+    },
+    stories: {
+      type: GraphQLInt,
+      resolve: hero => hero.stories
     }
   })
 });

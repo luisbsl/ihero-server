@@ -1,6 +1,6 @@
 {
-  "name": "graphql-dataloader-boilerplate",
-  "description": "GraphQL DataLoader boilerplate",
+  "name": "ihero-graphql-server",
+  "description": "GraphQL Server wrapping Marvel Rest API",
   "version": "0.0.1",
   "dependencies": {
     "@entria/graphql-mongoose-loader": "^1.1.1",
