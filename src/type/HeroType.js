@@ -6,10 +6,10 @@ import { NodeInterface } from '../interface/NodeInterface'
 
 export default new GraphQLObjectType({
   name: 'Hero',
-  description: 'Hero data',
+  description: 'Attributes of hero',
   fields: () => ({
-    // id: globalIdField('Hero'),
-    id: {
+    id: globalIdField('Hero'),
+    _id: {
       type: GraphQLString,
       resolve: hero => hero.id
     },
@@ -37,5 +37,6 @@ export default new GraphQLObjectType({
       type: GraphQLInt,
       resolve: hero => hero.stories
     }
-  })
+  }),
+  interfaces: () => [NodeInterface]
 });

@@ -8,7 +8,7 @@ const hash = md5.create()
 hash.update(timestamp + PRIVATE_KEY + PUBLIC_KEY)
 
 const getHeroList = () => {
-  const BASE_URL = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&comics=67311&orderBy=name&limit=10&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`
+  const BASE_URL = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&comics=67311,67002,17490,67311&orderBy=name&limit=100&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`
 
   let hero = {}
   let heroes = []
@@ -20,6 +20,7 @@ const getHeroList = () => {
         if (obj.name !== 'Avengers') {
           hero = {
             id: obj.id,
+            _id: obj.id,
             name: obj.name,
             description: obj.description,
             image: obj.thumbnail.path + '/standard_fantastic.jpg',
@@ -30,6 +31,7 @@ const getHeroList = () => {
           heroes.push(hero)
         }
       })
+      heroes.id = 1
       return heroes
     })
     .catch(err => {
@@ -48,6 +50,7 @@ const getHeroById = (id) => {
         results.map(obj => {
           hero = {
             id: obj.id,
+            _id: obj.id,
             name: obj.name,
             description: obj.description,
             image: obj.thumbnail.path + '/standard_fantastic.jpg',
