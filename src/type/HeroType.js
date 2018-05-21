@@ -9,10 +9,6 @@ export default new GraphQLObjectType({
   description: 'Attributes of hero',
   fields: () => ({
     id: globalIdField('Hero'),
-    _id: {
-      type: GraphQLString,
-      resolve: hero => hero.id
-    },
     name: {
       type: GraphQLString,
       resolve: hero => hero.name
