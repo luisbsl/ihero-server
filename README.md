@@ -4,7 +4,7 @@ It's was created from <a href="https://github.com/entria/graphql-dataloader-boil
 
 Wrapping Marvel Rest API at https://developer.marvel.com
 
-## What can you use?
+## Features
 
 - Auth
 - Register Account
