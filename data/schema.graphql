@@ -16,7 +16,6 @@ type ChangePasswordPayload {
 type Hero implements Node {
   """The ID of an object"""
   id: ID!
-  _id: String
   name: String
   description: String
   image: String

@@ -2,6 +2,7 @@
   "name": "ihero-graphql-server",
   "description": "GraphQL Server wrapping Marvel Rest API",
   "version": "0.0.1",
+  lice
   "dependencies": {
     "@entria/graphql-mongoose-loader": "^1.1.1",
     "apollo-server-koa": "^1.3.2",

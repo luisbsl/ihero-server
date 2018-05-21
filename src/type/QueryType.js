@@ -30,7 +30,10 @@ export default new GraphQLObjectType({
           type: new GraphQLNonNull(GraphQLID),
         },
       },
-      resolve: async (obj, args, context) => await getHeroById(args.id)
+      resolve: async (_, args) => {
+        const { id } = fromGlobalId(args.id);
+        return await getHeroById(id)
+      }
     },
     me: {
       type: UserType,
