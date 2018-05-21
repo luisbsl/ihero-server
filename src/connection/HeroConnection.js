@@ -12,10 +12,5 @@ import HeroType from '../type/HeroType';
 
 export default connectionDefinitions({
   name: 'Hero',
-  nodeType: HeroType,
-  connectionFields: {
-    count: {
-      type: GraphQLInt,
-    },
-  },
+  nodeType: HeroType
 });

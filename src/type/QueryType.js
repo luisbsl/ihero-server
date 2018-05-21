@@ -1,7 +1,7 @@
 // @flow
 
 import { GraphQLObjectType, GraphQLString, GraphQLNonNull, GraphQLID, GraphQLList } from 'graphql';
-import { globalIdField, connectionArgs, fromGlobalId } from 'graphql-relay';
+import { globalIdField, connectionArgs, fromGlobalId, connectionFromArray } from 'graphql-relay';
 import { NodeInterface } from '../interface/NodeInterface';
 
 import UserType from './UserType';
@@ -19,8 +19,9 @@ export default new GraphQLObjectType({
   fields: () => ({
     node: NodeField,
     heroes: {
-      type: new GraphQLList(HeroType),
-      resolve: async (_, args, root, ast) => getHeroList()
+      type: HeroConnection.connectionType,
+      args: connectionArgs,
+      resolve: async (_, args) => connectionFromArray(await getHeroList(), args)
     },
     hero: {
       type: HeroType,
@@ -29,7 +30,10 @@ export default new GraphQLObjectType({
           type: new GraphQLNonNull(GraphQLID),
         },
       },
-      resolve: async (obj, args, context) => getHeroById(args.id)
+      resolve: async (_, args) => {
+        const { id } = fromGlobalId(args.id);
+        return await getHeroById(id)
+      }
     },
     me: {
       type: UserType,

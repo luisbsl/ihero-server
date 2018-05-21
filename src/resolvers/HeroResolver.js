@@ -8,7 +8,7 @@ const hash = md5.create()
 hash.update(timestamp + PRIVATE_KEY + PUBLIC_KEY)
 
 const getHeroList = () => {
-  const BASE_URL = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&comics=67311&orderBy=name&limit=10&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`
+  const BASE_URL = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&comics=67002, 67311&orderBy=name&limit=100&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`
 
   let hero = {}
   let heroes = []
@@ -30,6 +30,7 @@ const getHeroList = () => {
           heroes.push(hero)
         }
       })
+      heroes.id = 1
       return heroes
     })
     .catch(err => {
