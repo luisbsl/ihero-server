@@ -1,6 +1,6 @@
 ### iHero - GraphQL Server
 
-It's was created from <a href="https://github.com/entria/graphql-dataloader-boilerplate">graphql-dataloader-boilerplate</a> as Starter Project
+It was created from <a href="https://github.com/entria/graphql-dataloader-boilerplate">graphql-dataloader-boilerplate</a> as Starter Project
 
 Wrapping Marvel Rest API at https://developer.marvel.com
 
