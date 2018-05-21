@@ -11,7 +11,6 @@ Wrapping Marvel Rest API at https://developer.marvel.com
 - Fetch Marvels Avengers Comics 2018 Heroes
 - Fetch Hero by ID
 
-
 ## Where is database?
 
 Database is running at <a href="https://mlab.com">MLab</a>
