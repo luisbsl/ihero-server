@@ -15,7 +15,7 @@
     "graphql-subscriptions": "^0.5.8",
     "isomorphic-fetch": "^2.2.1",
     "js-md5": "^0.7.3",
-    "jsonwebtoken": "^8.1.0",
+    "jsonwebtoken": "^9.0.0",
     "kcors": "^2.2.1",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
